@@ -66,6 +66,11 @@ python main.py --base configs/latent-diffusion/txt2img-1p4B-finetune.yaml
                --init_word <initialization_word>
 ```
 
+```
+cd textual_inversion-main
+python main.py --base configs/latent-diffusion/txt2img-1p4B-finetune.yaml -t --actual_resume /userhome/cs2/u3583248/models/ldm/text2img-large/model.ckpt -n <any_run_name> --gpus 0, --data_root train-img --init_word <initialization_word>
+```
+
 where the initialization word should be a single-token rough description of the object (e.g., 'toy', 'painting', 'sculpture'). If the input is comprised of more than a single token, you will be prompted to replace it.
 
 Please note that `init_word` is *not* the placeholder string that will later represent the concept. It is only used as a beggining point for the optimization scheme.
